@@ -28,7 +28,6 @@ class Graphics:
         self.main_surf = pygame.Surface((M_WIDTH, M_HEIGHT))
         self.load_img()
         pygame.display.set_caption('Tic Tac Toe')
-        
 
     def draw (self, state : State = None):
         self.header_surf.fill(BLUE)
