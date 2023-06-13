@@ -6,11 +6,11 @@ class State:
         if board is not None:
             self.board = board
         else:
-            self.board = self.init_state()
-        self.player = 1
+            self.board = self.init_board()
+        self.player = player
         self.end_of_game = 0
 
-    def init_state(self):
+    def init_board(self):
         board = np.zeros((3,3))
         return board
     

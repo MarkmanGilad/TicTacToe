@@ -8,12 +8,8 @@ class TicTacToe:
     def move (self, action):
         self.state.board[action] = self.state.player
         self.switch_players(self.state)
-
-    def next_state (self, state:State, action):
-        new_state = state.copy()
-        new_state.board[action] = self.state.player
-        self.switch_players(new_state)
-
+        self.end_of_game(self.state)
+   
     def legal (self, state:State, action):
         if state.board[action]==0:
             return True
@@ -28,16 +24,24 @@ class TicTacToe:
         
         # print (f'row_sum: {row_sum} col_sum: {col_sum} diagonals: {diagonals} piece_num: {piece_num}')
         if 3 in row_sum or 3 in col_sum or 3 in diagonals:
-            return 'x'
+            state.end_of_game = 1
+            return True
         if -3 in row_sum or -3 in col_sum or -3 in diagonals:
-            return 'o' 
+            state.end_of_game = -1
+            return True
         if piece_num == 9:
-            return 't'
-        return None
-        
+            state.end_of_game = 2
+            return True
+        return False
 
     def switch_players (self, state:  State):
         if state.player == 1:
             state.player = -1
         else:
             state.player = 1
+
+    def next_state (self, state:State, action):
+        new_state = state.copy()
+        new_state.board[action] = self.state.player
+        self.switch_players(new_state)
+        self.end_of_game(new_state)

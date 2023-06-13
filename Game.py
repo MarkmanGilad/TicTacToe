@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame
 from Graphics import *
 from TicTacToe import TicTacToe
 from Human_Agent import Human_Agent
@@ -24,16 +24,8 @@ def main ():
         if action:
             env.move(action)
             switch_players(player)
-            eog = env.end_of_game(env.state)
-            if eog:
-                if eog == 'x':
-                    env.state.end_of_game = 1
-                elif eog == 'o':
-                    env.state.end_of_game = -1
-                else:
-                    env.state.end_of_game = 2
+            if env.state.end_of_game != 0:
                 run = False
-                
 
         graphics(env.state)
         clock.tick(FPS)

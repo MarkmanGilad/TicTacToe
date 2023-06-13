@@ -8,7 +8,6 @@ WIDTH, HEIGHT = 300, 400
 ROWS, COLS = 3, 3
 SQUARE_SIZE = 100
 LINE_WIDTH = 2
-PADDING = SQUARE_SIZE //5
 
 H_WIDTH, H_HEIGHT = 300, 100
 M_WIDTH, M_HEIGHT = 300, 300
@@ -20,6 +19,7 @@ BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 LIGHTGRAY = (211,211,211)
 GREEN = (0, 128, 0)
+CADETBLUE1 = (152,245,255)
 
 class Graphics:
     def __init__(self):
@@ -29,8 +29,8 @@ class Graphics:
         self.load_img()
         pygame.display.set_caption('Tic Tac Toe')
 
-    def draw (self, state : State = None):
-        self.header_surf.fill(BLUE)
+    def draw (self, state : State):
+        self.header_surf.fill(CADETBLUE1)
         self.main_surf.fill(LIGHTGRAY)
         
         self.draw_Lines()

@@ -1,11 +1,9 @@
-from typing import Any
 from TicTacToe import TicTacToe
 import pygame
 from Graphics import *
-import time
 
 class Human_Agent:
-    def __init__(self, player, env: TicTacToe, graphics: Graphics) -> None:
+    def __init__(self, player, env: TicTacToe, graphics: Graphics):
         self.env = env
         self.player = player
         self.graphics = graphics
@@ -21,3 +19,5 @@ class Human_Agent:
 
     def __call__(self, events):
         return self.get_action(events)
+    
+

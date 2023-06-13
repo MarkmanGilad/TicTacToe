@@ -1,10 +1,12 @@
+# pygame main loop
 import pygame
-from Graphics import *
+
 pygame.init()
 
+WIDTH, HEIGHT = 300, 400
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Reversi')
+pygame.display.set_caption('Tic Tac Toe')
 
 def main ():
     run = True
@@ -15,3 +17,5 @@ def main ():
 
 if __name__ == '__main__':
     main()
+
+

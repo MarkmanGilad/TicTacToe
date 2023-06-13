@@ -1,3 +1,5 @@
+# events
+
 import pygame
 from Graphics import *
 pygame.init()
