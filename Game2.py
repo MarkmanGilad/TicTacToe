@@ -15,6 +15,7 @@ def main ():
         for event in events:
             if event.type == pygame.QUIT:
                run = False
+               # break
 
         pygame.display.update()
     
