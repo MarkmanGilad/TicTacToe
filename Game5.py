@@ -20,17 +20,15 @@ screen.blit(header_surf, (0,0))
 screen.blit(main_surf, (0,100))
 
 
-def main ():
-    run = True
-    while (run):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-               run = False
-            
+# Main Loop
+run = True
+while (run):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+        
 
-        pygame.display.update()
-        clock.tick(FPS)
+    pygame.display.update()
+    clock.tick(FPS)
     
 
-if __name__ == '__main__':
-    main()
