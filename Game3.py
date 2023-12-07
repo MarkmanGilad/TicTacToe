@@ -9,12 +9,14 @@ pygame.display.set_caption('Tic Tac Toe')
 clock = pygame.time.Clock()
 FPS = 60
 
-# Main Loop
-run = True
-while (run):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+
+def main ():
+    run = True
+
+    while (run):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+               run = False
 
     # The code
 

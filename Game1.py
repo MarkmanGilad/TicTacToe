@@ -14,10 +14,7 @@ while (run):
     pygame.display.update()
 
 
-
-
-    
-
-
+if __name__ == '__main__':
+    main()
 
 
