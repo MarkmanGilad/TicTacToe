@@ -15,22 +15,23 @@ main_surf.fill(LIGHTGRAY)
 pygame.draw.line(surface=main_surf, color=BLACK, start_pos=(10,10), end_pos=(100,100), width=5)
 pygame.draw.circle(surface=main_surf, color=GREEN, center= (150,150), radius=40, width=5)
 pygame.draw.circle(surface=header_surf, color=RED, center= (150,50), radius=30, width=0)
+pygame.draw.rect(surface=main_surf, color=GREEN,rect=(50,200,50,30),width=2 )
+pygame.draw.ellipse(surface=main_surf, color=RED,rect=(50,200,50,30),width=0)
+pygame.draw.polygon(surface=main_surf,color=BLUE,points=[(30,250), (190, 250), (80,300)],width=3)
 
 screen.blit(header_surf, (0,0))
 screen.blit(main_surf, (0,100))
 
 
-def main ():
-    run = True
-    while (run):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-               run = False
-            
+# Main Loop
+run = True
+while (run):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+        
 
-        pygame.display.update()
-        clock.tick(FPS)
+    pygame.display.update()
+    clock.tick(FPS)
     
 
-if __name__ == '__main__':
-    main()
