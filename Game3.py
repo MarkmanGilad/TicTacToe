@@ -10,18 +10,18 @@ clock = pygame.time.Clock()
 FPS = 60
 
 
-def main ():
-    run = True
+# Main Loop
+run = True
 
-    while (run):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-               run = False
+while (run):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
 
-    # The code
+# The code
 
 
-    pygame.display.update()
-    clock.tick(FPS)
-    
+pygame.display.update()
+clock.tick(FPS)
+
 

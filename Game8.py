@@ -12,35 +12,36 @@ main_surf = pygame.Surface((M_WIDTH, M_HEIGHT))
 header_surf.fill(BLUE)
 main_surf.fill(LIGHTGRAY)
 
-
-pygame.draw.line(surface=main_surf, color=BLACK, start_pos=(10,10), end_pos=(100,100), width=5)
-pygame.draw.circle(surface=main_surf, color=GREEN, center= (50,50), radius=20, width=2)
-pygame.draw.circle(surface=header_surf, color=RED, center= (150,50), radius=30, width=0)
 screen.blit(header_surf, (0,0))
 screen.blit(main_surf, (0,100))
 
-x_img = pygame.image.load("img/x_img.png")
-x_img = pygame.transform.scale(x_img, (40, 40))
+space_ship1 = pygame.image.load("img/space_ship.png")
+space_ship1 = pygame.transform.scale(space_ship1, (40, 40))
 
-def main ():
-    run = True
-    x1, y1 = 300, 50
-    
-    while (run):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-               run = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                x,y =  event.pos #pygame.mouse.get_pos()
-                pos = x - 20, y - 100 - 20
-                main_surf.blit(x_img,pos)
+space_ship2 = pygame.image.load("img/space_ship.png")
+space_ship2 = pygame.transform.scale(space_ship2, (40, 40))
 
-        header_surf.fill(BLUE)
-        header_surf.blit(x_img, (x1,y1))
-        x1 = (x1 - 2) % 300
-        screen.blit(header_surf, (0,0))
-        screen.blit(main_surf, (0,100))
-        pygame.display.update()
-        clock.tick(FPS)
-    
+
+run = True
+x1, y1 = 0, 50
+x2, y2 = 50, 100
+
+while (run):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    header_surf.fill(BLUE)
+
+    header_surf.blit(space_ship1, (x1,y1))
+    x1 = (x1 + 2) % 300
+
+    # main_surf.blit(space_ship2, (x2,y2))
+    # y2 = (y2 + 2) % 300
+
+    screen.blit(header_surf, (0,0))
+    screen.blit(main_surf, (0,100))
+    pygame.display.update()
+    clock.tick(FPS)
+
 
