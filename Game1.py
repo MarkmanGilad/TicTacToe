@@ -1,4 +1,4 @@
-# pygame main loop
+
 import pygame
 
 pygame.init()
@@ -9,6 +9,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Tic Tac Toe')
 
 def main ():
+# pygame main loop
     run = True
 
     while (run):

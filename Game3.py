@@ -1,11 +1,10 @@
 # clock & Frame Per Second
 
 import pygame
-from Graphics import *
 pygame.init()
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Tic Tac Toe')
+screen = pygame.display.set_mode((300, 400))
+pygame.display.set_caption('Pygame')
 clock = pygame.time.Clock()
 
 
@@ -21,7 +20,7 @@ def main ():
 
 
         pygame.display.update()
-        clock.tick(FPS)
+        clock.tick(60)  # FPS
     
 
 if __name__ == '__main__':

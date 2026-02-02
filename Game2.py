@@ -1,11 +1,10 @@
 # events
 
 import pygame
-from Graphics import *
 pygame.init()
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Reversi')
+screen = pygame.display.set_mode((300, 400))
+pygame.display.set_caption('pygame')
 
 def main ():
     run = True
@@ -19,6 +18,7 @@ def main ():
 
         pygame.display.update()
     
+    pygame.quit()
 
 if __name__ == '__main__':
     main()

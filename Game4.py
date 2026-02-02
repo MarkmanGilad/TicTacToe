@@ -2,19 +2,18 @@
 # https://www.pygame.org/docs/ref/color_list.html
 
 import pygame
-from Graphics import *
 pygame.init()
 
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((300, 400))
 pygame.display.set_caption('Tic Tac Toe')
 clock = pygame.time.Clock()
-header_surf = pygame.Surface((H_WIDTH, H_HEIGHT))
-main_surf = pygame.Surface((M_WIDTH, M_HEIGHT))
-header_surf.fill(BLUE)
-main_surf.fill(LIGHTGRAY)
+header_surf = pygame.Surface((300, 100))
+main_surf = pygame.Surface((300, 300))
+header_surf.fill('BLUE')
+main_surf.fill('LIGHTGRAY')
 
-screen.blit(header_surf, (0,0))
+screen.blit(header_surf, (20,10))
 screen.blit(main_surf, (0,100))
 
 
@@ -27,7 +26,7 @@ def main ():
 
         
         pygame.display.update()
-        clock.tick(FPS)
+        clock.tick(60)
     
 
 if __name__ == '__main__':
