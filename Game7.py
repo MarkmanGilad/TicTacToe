@@ -1,21 +1,20 @@
 # User Interface
 
 import pygame
-from Graphics import *
 pygame.init()
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((300, 400))
 pygame.display.set_caption('Reversi')
 clock = pygame.time.Clock()
-header_surf = pygame.Surface((H_WIDTH, H_HEIGHT))
-main_surf = pygame.Surface((M_WIDTH, M_HEIGHT))
-header_surf.fill(BLUE)
-main_surf.fill(LIGHTGRAY)
+header_surf = pygame.Surface((300, 100))
+main_surf = pygame.Surface((300, 300))
+header_surf.fill('BLUE')
+main_surf.fill('LIGHTGRAY')
 
 
-pygame.draw.line(surface=main_surf, color=BLACK, start_pos=(10,10), end_pos=(100,100), width=5)
-pygame.draw.circle(surface=main_surf, color=GREEN, center= (50,50), radius=20, width=2)
-pygame.draw.circle(surface=header_surf, color=RED, center= (150,50), radius=30, width=0)
+pygame.draw.line(surface=main_surf, color='BLACK', start_pos=(10,10), end_pos=(100,100), width=5)
+pygame.draw.circle(surface=main_surf, color='GREEN' , center= (50,50), radius=20, width=2)
+pygame.draw.circle(surface=header_surf, color='RED', center= (150,50), radius=30, width=0)
 screen.blit(header_surf, (0,0))
 screen.blit(main_surf, (0,100))
 
@@ -39,15 +38,15 @@ def main ():
                 print(events)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    header_surf.fill(GREEN)
+                    header_surf.fill('GREEN')
                 if event.key == pygame.K_RIGHT:
-                    header_surf.fill(CADETBLUE1)
+                    header_surf.fill('CADETBLUE1')
                     
 
         screen.blit(header_surf, (0,0))
         screen.blit(main_surf, (0,100))
         pygame.display.update()
-        clock.tick(FPS)
+        clock.tick(60)
     
 
 if __name__ == '__main__':
