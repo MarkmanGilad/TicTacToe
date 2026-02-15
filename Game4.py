@@ -13,7 +13,7 @@ main_surf = pygame.Surface((300, 300))
 header_surf.fill('BLUE')
 main_surf.fill('LIGHTGRAY')
 
-screen.blit(header_surf, (20,10))
+screen.blit(header_surf, (0,0))
 screen.blit(main_surf, (0,100))
 
 
