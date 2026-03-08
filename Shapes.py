@@ -8,8 +8,6 @@ pygame.display.set_caption('Shapes')
 clock = pygame.time.Clock()
 screen.fill('lightgray')
 
-
-
 pygame.draw.line(surface=screen, color='BLACK', start_pos=(10,10), end_pos=(100,100), width=5)
 pygame.draw.circle(surface=screen, color='GREEN', center= (150,150), radius=40, width=5)
 pygame.draw.circle(surface=screen, color='RED', center= (150,50), radius=30, width=0)

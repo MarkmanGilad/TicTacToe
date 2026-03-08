@@ -37,7 +37,7 @@ def main ():
 
         header_surf.fill('BLUE')
         header_surf.blit(x_img, (x1,y1))
-        x1 = (x1 - 2) % 300
+        x1 = (x1 - 2) % 320 
         screen.blit(header_surf, (0,0))
         screen.blit(main_surf, (0,100))
         pygame.display.update()
